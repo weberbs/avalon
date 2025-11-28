@@ -17,7 +17,7 @@ function getGameState(game: any) {
 	};
 }
 import { Server } from 'socket.io';
-import { AvalonGame } from '../lib/ganeLogic';
+import { AvalonGame } from '../lib/gameLogic';
 import { ClientToServerEvents, ServerToClientEvents, GameSettings, Player } from '../types/game';
 
 const io = new Server<ClientToServerEvents, ServerToClientEvents>({
@@ -181,8 +181,3 @@ io.on('connection', (socket) => {
 });
 
 export default io;
-// Create a TypeScript Socket.IO server that works with Next.js custom server pattern
-// Export a function initSocket(server: http.Server) that sets up io.on('connection')
-// Keep a Map<string, AvalonGame> for multiple game rooms (gameId → game instance)
-// Handle all events: joinGame, createGame, startGame, proposeTeam, voteProposal, voteQuest, assassinate
-// Broadcast gameUpdate with full GameState after every change

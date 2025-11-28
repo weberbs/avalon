@@ -31,7 +31,7 @@ This is a real-time online implementation of the social deduction game **The Res
 
 3. **Start the Socket.IO server:**
 
-	(If running separately, see `src/server/sockerServer.ts` for details.)
+	(If running separately, see `src/server/tServer.ts` for details.)
 
 4. **Open your browser:**
 

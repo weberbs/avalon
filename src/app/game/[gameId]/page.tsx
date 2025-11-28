@@ -2,7 +2,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams, useSearchParams, useRouter } from "next/navigation";
-import { useSocket } from "../../lib/socket";
+import { useSocket } from "../../../lib/socket";
 
 // Placeholder components (replace with real ones as needed)
 const PlayerList = ({ players, leaderId }: any) => (
