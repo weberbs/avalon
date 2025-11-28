@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# Avalon: The Resistance (Online)
+
+This is a real-time online implementation of the social deduction game **The Resistance: Avalon**, built with [Next.js](https://nextjs.org), [TypeScript](https://www.typescriptlang.org/), [Socket.IO](https://socket.io/), and [Tailwind CSS](https://tailwindcss.com/).
+
+## Features
+
+- Create or join Avalon games with a unique game code
+- Real-time gameplay and state sync via Socket.IO
+- All core Avalon roles and phases: lobby, role reveal, team building, voting, questing, assassination, and game end
+- Responsive, modern UI with Tailwind CSS
+- Player roles and information are kept private and secure
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+	```bash
+	npm install
+	# or
+	yarn install
+	```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Start the development server:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+	```bash
+	npm run dev
+	# or
+	yarn dev
+	```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Start the Socket.IO server:**
 
-## Learn More
+	(If running separately, see `src/server/sockerServer.ts` for details.)
 
-To learn more about Next.js, take a look at the following resources:
+4. **Open your browser:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+	Go to [http://localhost:3000](http://localhost:3000)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+- `src/app/` — Next.js app directory (pages, layout, routing)
+- `src/types/game.ts` — TypeScript types for all game logic and socket events
+- `src/lib/` — Game logic, socket hooks, and context
+- `src/components/` — UI components (PlayerCard, QuestBoard, RoleRevealModal, etc.)
+- `src/server/` — Socket.IO server implementation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- The game logic is implemented in `src/lib/ganeLogic.ts` and is fully type-safe.
+- All socket events are strongly typed for both client and server.
+- UI is designed for desktop and mobile.
+
+## Roadmap / TODO
+
+- Add support for custom roles and advanced variants
+- Add in-game chat
+- Add animations and sound effects
+- Improve mobile experience
+
+## License
+
+MIT
